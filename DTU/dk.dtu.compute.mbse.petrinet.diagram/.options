@@ -1,0 +1,7 @@
+# Tracing options for the my.petrinet.diagram plug-in
+
+# Common issues
+my.petrinet.diagram/debug=false
+
+# Visual IDs
+my.petrinet.diagram/debug/visualID=false

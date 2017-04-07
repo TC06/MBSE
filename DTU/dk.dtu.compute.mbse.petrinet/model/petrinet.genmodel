@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/my.petrinet/src" modelPluginID="my.petrinet" modelName="Mypetrinet"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>mypetrinet.ecore</foreignModel>
+  <genPackages prefix="Petrinet" basePackage="mypetrinet" disposableProviderFactory="true"
+      ecorePackage="mypetrinet.ecore#/">
+    <genClasses ecoreClass="mypetrinet.ecore#//Petrinet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mypetrinet.ecore#//Petrinet/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Petrinet/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Petrinet/arcs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mypetrinet.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mypetrinet.ecore#//Node/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Node/in"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Node/out"/>
+    </genClasses>
+    <genClasses ecoreClass="mypetrinet.ecore#//Arc">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Arc/source"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Arc/target"/>
+    </genClasses>
+    <genClasses ecoreClass="mypetrinet.ecore#//Transition"/>
+    <genClasses ecoreClass="mypetrinet.ecore#//Place">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mypetrinet.ecore#//Place/tokens"/>
+    </genClasses>
+    <genClasses ecoreClass="mypetrinet.ecore#//Token"/>
+  </genPackages>
+</genmodel:GenModel>
