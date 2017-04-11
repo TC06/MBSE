@@ -2,9 +2,15 @@
  */
 package mbse.yawl.impl;
 
+import mbse.yawl.AType;
+import mbse.yawl.Arc;
+import mbse.yawl.ArcType;
 import mbse.yawl.PType;
 import mbse.yawl.Place;
 import mbse.yawl.PlaceType;
+import mbse.yawl.TType;
+import mbse.yawl.Transition;
+import mbse.yawl.TransitionType;
 import mbse.yawl.YAWLNet;
 import mbse.yawl.YawlFactory;
 import mbse.yawl.YawlPackage;
@@ -53,6 +59,48 @@ public class YawlPackageImpl extends EPackageImpl implements YawlPackage {
 	 * @generated
 	 */
 	private EEnum pTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arcEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arcTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum aTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transitionTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum tTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -171,6 +219,106 @@ public class YawlPackageImpl extends EPackageImpl implements YawlPackage {
 	public EEnum getPType() {
 		return pTypeEEnum;
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArc() {
+		return arcEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArc_Arctype() {
+		return (EReference)arcEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArcType() {
+		return arcTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArcType_Text() {
+		return (EAttribute)arcTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getAType() {
+		return aTypeEEnum;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTransition() {
+		return transitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTransition_Transitiontype() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTransitionType() {
+		return transitionTypeEClass;
+	}
+	
+	@Override
+	public EReference getTransition_SplitType() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	@Override
+	public EReference getTransition_JoinType() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTransitionType_Text() {
+		return (EAttribute)transitionTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTType() {
+		return tTypeEEnum;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,6 +358,24 @@ public class YawlPackageImpl extends EPackageImpl implements YawlPackage {
 
 		// Create enums
 		pTypeEEnum = createEEnum(PTYPE);
+		
+		arcEClass = createEClass(ARC);
+		createEReference(arcEClass, ARC_ARCTYPE);
+
+		arcTypeEClass = createEClass(ARC_TYPE);
+		createEAttribute(arcTypeEClass, ARC_TYPE__TEXT);
+
+		// Create enums
+		aTypeEEnum = createEEnum(ATYPE);
+		
+		transitionEClass = createEClass(TRANSITION);
+		createEReference(transitionEClass, TRANSITION_TRANSITIONTYPE);
+
+		transitionTypeEClass = createEClass(TRANSITION_TYPE);
+		createEAttribute(transitionTypeEClass, TRANSITION_TYPE__TEXT);
+
+		// Create enums
+		tTypeEEnum = createEEnum(TTYPE);
 	}
 
 	/**
@@ -246,6 +412,10 @@ public class YawlPackageImpl extends EPackageImpl implements YawlPackage {
 		yawlNetEClass.getESuperTypes().add(thePnmlcoremodelPackage.getPetriNetType());
 		placeEClass.getESuperTypes().add(thePnmlcoremodelPackage.getPlace());
 		placeTypeEClass.getESuperTypes().add(thePnmlcoremodelPackage.getAttribute());
+		arcEClass.getESuperTypes().add(thePnmlcoremodelPackage.getArc());
+		arcTypeEClass.getESuperTypes().add(thePnmlcoremodelPackage.getAttribute());
+		transitionEClass.getESuperTypes().add(thePnmlcoremodelPackage.getTransition());
+		transitionTypeEClass.getESuperTypes().add(thePnmlcoremodelPackage.getAttribute());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(yawlNetEClass, YAWLNet.class, "YAWLNet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -255,12 +425,33 @@ public class YawlPackageImpl extends EPackageImpl implements YawlPackage {
 
 		initEClass(placeTypeEClass, PlaceType.class, "PlaceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlaceType_Text(), this.getPType(), "text", null, 0, 1, PlaceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		
+		initEClass(arcEClass, Arc.class, "Arc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArc_Arctype(), this.getArcType(), null, "arctype", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arcTypeEClass, ArcType.class, "ArcType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArcType_Text(), this.getAType(), "text", null, 0, 1, ArcType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		
+		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTransition_Transitiontype(), this.getTransitionType(), null, "transitiontype", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(transitionTypeEClass, TransitionType.class, "TransitionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransitionType_Text(), this.getTType(), "text", null, 0, 1, TransitionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(pTypeEEnum, PType.class, "PType");
 		addEEnumLiteral(pTypeEEnum, PType.NORMAL);
 		addEEnumLiteral(pTypeEEnum, PType.START);
 		addEEnumLiteral(pTypeEEnum, PType.FINISH);
+		
+		initEEnum(aTypeEEnum, AType.class, "AType");
+		addEEnumLiteral(aTypeEEnum, AType.NORMAL);
+		addEEnumLiteral(aTypeEEnum, AType.RESET);
+		
+		initEEnum(tTypeEEnum, TType.class, "TType");
+		addEEnumLiteral(tTypeEEnum, TType.AND);
+		addEEnumLiteral(tTypeEEnum, TType.OR);
+		addEEnumLiteral(tTypeEEnum, TType.XOR);
 
 		// Create resource
 		createResource(eNS_URI);
